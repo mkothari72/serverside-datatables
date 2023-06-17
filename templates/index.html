@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block head %}
+<script src="static/js/utility.js"></script>
+
+{% endblock head %}
+{% block content %}
+    <div class="container">
+        <form method="post" action="/update">
+        <h3> DataTable </h3>
+        {% include "partials/datatable.html" %}
+
+        <button type="submit" id="updBtn" name="update_btn">Submit form</button>
+    </form>
+    </div>
+{% endblock content %}
+{% block script %}
+    <script>
+    </script>
+{% endblock script %}
