@@ -25,6 +25,7 @@ $(document).ready(function () {
             "contentType": "application/json; charset=utf-8",
             success: function(result) {
                 alert("Your changes have been committed to the database");
+                window.location="/";
             },
             error: function(result) {
                 alert('error in POST');
