@@ -11,6 +11,8 @@ $(document).ready(function () {
     });
 
     $('#updBtn').click(function () {
+        var spinner='<div class="spinner-border  text-light" role="status"><span class="sr-only">Loading...</span></div> Processing ...... '
+        $('#updBtn').html(spinner)
         var data = data_table.rows().data();
         alert( 'The table has '+data.length+' records' );
         console.log(JSON.stringify(data)); 
@@ -25,11 +27,14 @@ $(document).ready(function () {
             "contentType": "application/json; charset=utf-8",
             success: function(result) {
                 alert("Your changes have been committed to the database");
+                $('#updBtn').text("Submit form")
                 window.location="/";
             },
             error: function(result) {
+                $('#updBtn').text("Submit")
                 alert('error in POST');
             }
         })    
     });
 });
+

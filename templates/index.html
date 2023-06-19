@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% block head %}
 <script src="static/js/utility.js"></script>
+<link rel="stylesheet" href="../static/css/style.css">
 
 {% endblock head %}
 {% block content %}
@@ -9,7 +10,7 @@
         <h3> DataTable </h3>
         {% include "partials/datatable.html" %}
 
-        <button type="submit" id="updBtn" name="update_btn">Submit form</button>
+        <button type="button" class="btn btn-primary" id="updBtn" name="update_btn">Submit form</button>
     </form>
     </div>
 {% endblock content %}
