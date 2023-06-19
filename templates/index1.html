@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% block css %}
+    <link rel="stylesheet" href="../static/css/style.css">
+{% endblock css %}
+{% block content %}
+    <div class="container">
+        <form method="post" action="/update">
+        <h3> Serverside DataTable </h3>
+        <table id="ssTable" class="table table-bordered" style="width:100%">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Position</th>
+                    <th>Office</th>
+                    <th>Age</th>
+                    <th>Start date</th>
+                    <th>Salary</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th>Name</th>
+                    <th>Position</th>
+                    <th>Office</th>
+                    <th>Age</th>
+                    <th>Start date</th>
+                    <th>Salary</th>
+                </tr>
+            </tfoot>
+        </table>
+
+        <button type="button" class="btn btn-primary" id="updBtn" name="update_btn">Submit form</button>
+    </form>
+    </div>
+{% endblock content %}
+{% block script %}
+    <script src="static/js/utility.js"></script>
+    <script>
+        $('#ssTable').DataTable( {
+            ajax: {
+               url: '/data/json',
+            },
+            columns: [
+                { data: "name" },
+                { data: "position" },
+                { data: "office" },
+                { data: "age" },
+                { data: "start_date" },
+                { data: "salary" }
+                /*and so on, keep adding data elements here for all your columns.*/
+            ]
+        } );
+    </script>
+{% endblock script %}

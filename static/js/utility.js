@@ -26,6 +26,7 @@ $(document).ready(function () {
             "data": JSON.stringify(data),
             "contentType": "application/json; charset=utf-8",
             success: function(result) {
+                console.log(result)
                 alert("Your changes have been committed to the database");
                 $('#updBtn').text("Submit form")
                 window.location="/";

@@ -1,9 +1,7 @@
 {% extends "base.html" %}
-{% block head %}
-<script src="static/js/utility.js"></script>
-<link rel="stylesheet" href="../static/css/style.css">
-
-{% endblock head %}
+{% block css %}
+    <link rel="stylesheet" href="../static/css/style.css">
+{% endblock css %}
 {% block content %}
     <div class="container">
         <form method="post" action="/update">
@@ -15,6 +13,5 @@
     </div>
 {% endblock content %}
 {% block script %}
-    <script>
-    </script>
+    <script src="static/js/utility.js"></script>
 {% endblock script %}

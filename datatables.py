@@ -8,6 +8,28 @@ app=Flask(__name__)
 def hello_world():
     return render_template('index.html')
 
+@app.route("/ss",methods=["GET"])
+def get_data():
+    return render_template('index1.html')
+
+@app.route("/data/json",methods=["GET"])
+def get_json_data():
+    data=None
+    draw=None
+    # draw=request.
+    f=open('json_data.json')
+    if f:
+        data=json.load(f)
+        f.close()
+        print(f"record count : {len(data)}")
+        response = {
+            'draw': draw,
+            'iTotalRecords': len(data),
+            'iTotalDisplayRecords': len(data),
+            'aaData': data
+        }
+    return jsonify(response)
+
 @app.route("/update", methods=["GET","POST"]) 
 def update_data():
     content_type = request.headers.get('Content-Type')
@@ -21,9 +43,10 @@ def update_data():
         for key in discard_keys:
             request_data.pop(key, None)
 
-        for key, value in request_data.items():
-            print(value)        
-        data=json.dumps(request_data)
+        data_list=list(request_data.values())
+        print(data_list)        
+        data=json.dumps(data_list)
+        print(data)        
         results = {
             'processed': 'true',
             'data': data
