@@ -38,20 +38,22 @@
 {% endblock content %}
 {% block script %}
     <script src="static/js/utility.js"></script>
-    <script>
-        $('#ssTable').DataTable( {
-            ajax: {
-               url: '/data/json',
-            },
-            columns: [
-                { data: "name" },
-                { data: "position" },
-                { data: "office" },
-                { data: "age" },
-                { data: "start_date" },
-                { data: "salary" }
-                /*and so on, keep adding data elements here for all your columns.*/
-            ]
-        } );
-    </script>
+    <!-- <script>
+        $(document).ready(function () {
+            var data_table=$('#ssTable').DataTable( {
+                ajax: {
+                url: '/data/json',
+                },
+                columns: [
+                    { data: "name" },
+                    { data: "position" },
+                    { data: "office" },
+                    { data: "age" },
+                    { data: "start_date" },
+                    { data: "salary" }
+                    /*and so on, keep adding data elements here for all your columns.*/
+                ]
+            } );
+        })
+        </script> -->
 {% endblock script %}

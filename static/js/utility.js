@@ -1,5 +1,18 @@
 $(document).ready(function () {
-    var data_table = $('#example').DataTable({
+    // var data_table = $('#example').DataTable({
+    //     columns: [
+    //         { data: 'name'},
+    //         { data: 'position'},
+    //         { data: 'office'},
+    //         { data: 'age'},
+    //         { data: 'start_date'},
+    //         { data: 'salary'},
+    //     ],
+    // });
+    var data_table = $('#ssTable').DataTable({
+        ajax: {
+            url: '/data/json',
+            },
         columns: [
             { data: 'name'},
             { data: 'position'},
