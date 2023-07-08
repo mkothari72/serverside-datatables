@@ -27,6 +27,10 @@ def edit_data():
 def get_data():
     return render_template('index1.html')
 
+@app.route("/sample1",methods=["GET"])
+def get_sample():
+    return render_template('sample1.html')
+
 @app.route("/data/json",methods=["GET"])
 def get_json_data():
     data=None
