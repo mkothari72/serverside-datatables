@@ -8,6 +8,21 @@ app=Flask(__name__)
 def hello_world():
     return render_template('index.html')
 
+@app.route("/edit",methods=["GET"])
+def edit_data():
+    data=[
+        {"id": "101", "name": "Gowtham", "age": 28, "city": "Coimbatore", "state": "Tamil Nadu"},    
+        {"id": "102", "name": "Sudhan", "age": 38, "city": "Ooty", "state": "Tamil Nadu"},    
+        {"id": "103", "name": "Vignesh", "age": 34, "city": "Erode", "state": "Tamil Nadu"},    
+        {"id": "104", "name": "CSK", "age": 34, "city": "Coimbatore", "state": "Tamil Nadu"},    
+        {"id": "105", "name": "Arvind", "age": 28, "city": "Coimbatore", "state": "Tamil Nadu"},    
+        {"id": "106", "name": "Rahul", "age": 38, "city": "Ooty", "state": "Tamil Nadu"},    
+        {"id": "107", "name": "Raji", "age": 34, "city": "Erode", "state": "Tamil Nadu"},    
+        {"id": "108", "name": "Ananthi", "age": 34, "city": "Coimbatore", "state": "Tamil Nadu"},     
+    ]     
+
+    return render_template('home.html', data=data)
+
 @app.route("/ss",methods=["GET"])
 def get_data():
     return render_template('index1.html')
